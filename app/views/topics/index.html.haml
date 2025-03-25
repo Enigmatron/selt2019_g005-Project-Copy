@@ -1,0 +1,39 @@
+-#  This file is app/views/topics/index.html.haml
+
+= form_tag topics_path, :method => :get do
+  %p
+    = text_field_tag :header, params[:header]
+    %select{ :name => :type }
+      %option{:value => :header}= "Topic"
+      %option{:value => :subject}= "Subject"
+    = submit_tag "Search Topic", name: nil
+
+%table#topics
+  %thead
+    %tr
+      %th Topic
+      %th Subject
+      %th Upvote Count
+      %th Upvote
+      %th Options
+  %tbody
+    - @topics.each do |topic|
+      %tr
+        %td= link_to "#{topic.header}", topic_path(topic)
+        %td= topic.subject
+        %td= topic.votes_for.size
+        %td= link_to '+', upvote_topic_path(topic)
+        %td= link_to 'delete', topic_path(topic), :method => :delete
+
+-if !@current_user.nil?
+  =link_to 'Add new topic', new_topic_path
+  %br
+  =link_to 'See your profile', user_path(@current_user)
+  %br
+    -#= form_tag delete_topic_topics_path, :method => :delete do
+    -#  = submit_tag 'Delete Topic', name: nil
+
+
+-if !@current_user.nil?
+  -if @current_user.Admin
+    %p.AdminPage= button_to "admin page", users_admin_path , :method => :post, :id => 'admin_page'

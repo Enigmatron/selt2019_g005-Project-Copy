@@ -1,0 +1,34 @@
+-# in app/views/topics/show.html.haml
+
+%h2 Details about #{@topic.header}
+
+%ul#details
+  %li
+    Up votes
+    = @topic.votes_for.size
+  %li
+    Created on:
+    -# = @topics.created_at.strftime("%B %d, %Y")
+
+%h3 Subject:
+
+%p#subject= @topic.subject
+
+%table#comments
+  %thead
+    %tr
+      %th User
+      %th Comments
+  %tbody
+    - @comments.each do |comment|
+      %tr
+        %td= "#{find_user(comment.user_id).handle}"
+        %td= "#{comment.comment}"
+
+= link_to link_to "Add Comment", new_topic_comment_path(@topic)
+
+= link_to 'Edit', edit_topic_path(@topic)
+-if !@current_user.nil?
+  -if @current_user.Admin
+    = button_to 'Delete topic', topic_path(@topic), :method => :delete, :confirm => 'Are you sure?', :id => 'delete_topic'
+= link_to 'Back to main page', topics_path

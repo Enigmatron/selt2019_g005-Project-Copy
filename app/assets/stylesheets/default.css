@@ -1,0 +1,72 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: White;
+  color: DarkSlateGrey;
+  font-family: Tahoma, Verdana, sans-serif;
+  font-size: 10pt;
+}
+div#main {
+  margin: 0;
+  padding: 0 20px 20px;
+}
+a {
+  background: transparent;
+  color: darkblue;
+  text-decoration: none;
+  font-weight: bold;
+}
+h1 {
+  color: darkblue;
+  font-size: 150%;
+  font-style: italic;
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid DarkSlateGrey;
+}
+h1.title {
+  margin: 0 0 1em;
+  padding: 10px;
+  background-color: dodgerblue;
+  color: white;
+  border-bottom: 4px solid lightskyblue;
+  font-size: 2em;
+  font-style: normal;
+}
+table#topics {
+  margin: 10px;
+  border-collapse: collapse;
+  width: 100%;
+  border-bottom: 2px solid black;
+}
+table#topics th {
+  border: 2px solid white;
+  font-weight: bold;
+  background-color: lightskyblue;
+}
+table#topics th, table#topics td {
+  padding: 6px;
+  text-align: left;
+  color: black;
+}
+table#comments th {
+  letter-spacing: 1px;
+  border: 1px solid white;
+  font-weight: bold;
+}
+table#comments th, table#comments td {
+  padding: 6px;
+  text-align: left;
+  color: black;
+}
+#notice #warning {
+  background: darkblue;
+  margin: 1em 0;
+  padding: 4px;
+}
+form label {
+  display: block;
+  line-height: 25px;
+  font-weight: bold;
+  color: darkblue;
+}

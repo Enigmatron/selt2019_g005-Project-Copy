@@ -1,0 +1,12 @@
+For Cucumber
+
+Fixes: i.e fix ____
+  sign in for comment feature (note may be password_confirm)
+  SignUp feature:    ^I expect to have successfully signed up as "(.*?)"$
+  NewTopic Feature: ^I expect to have my topic, "(.*?)" posted$
+
+Creates: i.e create ____
+  admin features for deleting comments and topics
+
+
+

@@ -1,0 +1,25 @@
+-# in app/views/movies/show.html.haml
+
+%h2 Topics that the #{@user.handle} has voted on
+
+-if !@current_user.nil?
+
+  %table#topics
+    %thead
+      %tr
+        %th Topic
+        %th Subject
+        %th Upvote Count
+    %tbody
+      - @current_user.find_voted_items.each do |topic|
+        %tr
+          %td= link_to "#{topic.header}", topic_path(topic)
+          %td= topic.subject
+          %td= topic.votes_for.size
+
+
+
+  -if @current_user.Admin
+    %p.DeleteUser= button_to "Delete User", user_path(@user) , :method => :delete, :confirm => 'Are you sure?', :id => 'delete_user'
+    %p.UserIndex= button_to "users/index", users_path , :method => :get, :id => 'user_index_on_show'
+

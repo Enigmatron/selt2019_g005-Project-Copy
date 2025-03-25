@@ -1,0 +1,6 @@
+-#Admin view
+%h1 Hello '#{@current_user.handle}' would you like to view current Users or Topics?
+-#= link_to 'Users', index_user_path
+-#= link_to 'Topics', index_topics_path
+%p.UserIndex= button_to "users/index", users_path , :method => :get, :id => 'user_index'
+%p.TopicsIndex= button_to "topics/index", topics_path , :method => :get, :id => 'topics_index'

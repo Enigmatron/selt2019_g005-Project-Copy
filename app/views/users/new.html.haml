@@ -1,0 +1,18 @@
+
+%h1 Sign-up
+
+= form_tag users_path :method => 'post' do
+
+  = label :user, :handle, 'Handle'
+  = text_field :user, 'handle'
+
+  -#= label :user, :email, 'Email'
+  -#= text_field :user, 'email'
+
+  = label :user, :password, 'Password'
+  = password_field :user, 'password'
+
+  = label :user, :password_confirmation, 'Confirm Password'
+  = password_field :user, 'password_confirmation'
+
+  = submit_tag "Create Your Account", :id => 'signupCreate'

@@ -1,0 +1,7 @@
+-# edit.html.haml using partial
+
+%h1 Edit Your Topic
+
+= form_tag topic_path(@topic), :method => :put do
+  = render partial: 'topic_form_html'
+  = submit_tag 'Update Movie Info'

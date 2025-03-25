@@ -1,0 +1,9 @@
+{
+  "GROUP" : "G005",
+  "ALL_SPRINTS" : {
+    "SPRINT1_URL" : "https://selt2019-g005-sprint1.herokuapp.com/topics",
+    "SPRINT2_URL" : "https://selt2019-g005-sprint2.herokuapp.com/topics",
+    "SPRINT3_URL" : "https://selt2019-sprint3.herokuapp.com",
+    "FINAL_URL" : "https://selt2019-sprint3.herokuapp.com"
+  }
+}

@@ -1,0 +1,16 @@
+%h1 All current users
+
+%table#Users
+  %thead
+    %tr
+      %th Handle
+      %th Created at
+  %tbody
+    - @user.each do |user|
+      %tr
+        %td= link_to "#{user.handle}", user_path(user)
+        %td= user.created_at
+
+-if !@current_user.nil?
+  -if @current_user.Admin
+    %p.AdminPage= button_to "admin page", users_admin_path , :method => :post, :id => 'admin_page'

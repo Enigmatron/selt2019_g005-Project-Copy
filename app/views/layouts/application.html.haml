@@ -1,0 +1,21 @@
+!!! 5
+%html
+  %head
+    %title GeoGab!
+    = stylesheet_link_tag 'application', 'media' => 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+  %body
+    %h1.title GeoGab!
+    #main
+      =link_to 'Home', topics_path
+      -if !@current_user
+        - if flash[:notice]
+          #notice.flashMessage= flash[:notice]
+        %p.signupLogin= button_to "Sign up/login", login_path , :method => :get, :id => 'signupLogin'
+      -else
+        -flash[:login]= "You are logged in as #{@current_user.handle}"
+        #login.flashMessage= flash[:login]
+        %p.logout= button_to "Log Out", logout_path , :method => :delete, :id => 'logout'
+      = yield

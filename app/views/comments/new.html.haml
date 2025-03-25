@@ -1,0 +1,7 @@
+%h1 Comment
+
+= form_tag topic_comments_path :method => 'post' do
+
+  = label :comment, :comment_text, 'Enter Comment'
+  = text_area :comment, 'comment', cols: 30, rows: 20
+  = submit_tag "Post Comment", :id => 'commentCreate'

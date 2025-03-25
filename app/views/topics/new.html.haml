@@ -1,0 +1,5 @@
+%h1 Create New Topic
+
+= form_tag topics_path do
+  = render :partial => 'topic_form_html'
+  = submit_tag 'Save Changes'

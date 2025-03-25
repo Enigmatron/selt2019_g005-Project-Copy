@@ -1,0 +1,12 @@
+For RSpec
+
+Fixes: i.e fix ____
+
+
+
+
+Creates: i.e create ____
+  incorrect post tests
+  make sure all post tests are made for controllers
+  admin, geo location, and search test
+  comments controller tests
